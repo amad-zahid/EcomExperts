@@ -1,0 +1,3 @@
+.product__media-list .product__media-item:last-child{
+    display: none;
+}
