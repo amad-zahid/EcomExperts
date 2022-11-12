@@ -475,11 +475,31 @@
             {%- when 'variant_picker' -%}
               {% for product_option in product.options_with_values %}
                   {% if product_option.name == 'Sizes' or product_option.name == 'sizes' or product_option.name == 'size' or product_option.name == 'Size' %}
-                          <ul>
+                          <div class="product-form__input product-form__input--dropdown">
+                        <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
+                          {{ option.name }}
+                        </label>
+                        <div class="select">
+                          <select
+                            id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                            class="select__select"
+                            name="options[{{ option.name | escape }}]"
+                            form="{{ product_form_id }}"
+                          >
                             {% for value in product_option.values %}
-                            <li>{{ value }}</li>
+                            <option
+                                value="{{ value | escape }}"
+                                {% if option.selected_value == value %}
+                                  selected="selected"
+                                {% endif %}
+                              >
+                                {{ value }}
+                              </option>
                             {% endfor %}
-                          </ul>
+                          </select>
+                          {% render 'icon-caret' %}
+                        </div>
+                      </div>
                   {% endif %}
               {% endfor %}
               {%- unless product.has_only_default_variant -%}
