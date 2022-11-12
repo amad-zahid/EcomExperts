@@ -509,6 +509,9 @@
                                 {% render 'icon-caret' %}
                               </div>
                             </div>
+                            <script type="application/json">
+                                {{ product.variants | json }}
+                            </script>
                           </variant-selects>
                       {%- else -%}
                           <variant-radios
@@ -535,12 +538,13 @@
                                 </label>
                               {%- endfor -%}
                             </fieldset>
+                            <script type="application/json">
+                                {{ product.variants | json }}
+                            </script>
                           </variant-radios>
                       {%- endif -%}
                   {%- endfor -%}
-                  <script type="application/json">
-                      {{ product.variants | json }}
-                  </script>
+                  
                 {%- else -%}
                   <variant-selects
                     class="no-js-hidden"
