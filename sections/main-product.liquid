@@ -473,6 +473,15 @@
               </share-button>
               <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
             {%- when 'variant_picker' -%}
+              {% for product_option in product.options_with_values %}
+              {% if product_option.name == 'Sizes' or product_option.name == 'sizes' or product_option.name == 'size' or product_option.name == 'Size' %}
+                      <ul>
+                        {% for value in product_option.values %}
+                        <li>{{ value }}</li>
+                        {% endfor %}
+                      </ul>
+              {% endif %}
+              {% endfor %}
               {%- unless product.has_only_default_variant -%}
                 {%- if block.settings.picker_type == 'button' -%}
                   <variant-radios
