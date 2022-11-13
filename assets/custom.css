@@ -6,5 +6,5 @@
     display: block;
 } */
 .product__media-item.product__media-item--variant{
-    display: block;
+    display: block !important;
 }
