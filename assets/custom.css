@@ -8,3 +8,6 @@
 .product__media-item.product__media-item--variant{
     display: block !important;
 }
+.product--stacked .product__media-item{
+    width: 25%;
+}
