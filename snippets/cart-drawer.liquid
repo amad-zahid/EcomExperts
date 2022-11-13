@@ -66,6 +66,9 @@
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
+                        {% if item.product.id == 8005041488191 %}
+                          <div><h1>Some text here!</h1></div><br> 
+                        {% endif %} 
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
