@@ -11,3 +11,7 @@
 .product--stacked .product__media-item{
     width: 25%;
 }
+.slider{
+    width: 70%;
+    margin: 0 auto;
+}
