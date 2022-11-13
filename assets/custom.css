@@ -5,3 +5,6 @@
 .product__media-list .product__media-item.grid__item.slider__slide.is-active{
     display: block;
 } */
+.product__media-item.product__media-item--variant{
+    display: block;
+}
