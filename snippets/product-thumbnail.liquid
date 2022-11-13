@@ -69,8 +69,8 @@
   {%- endif -%}
 </noscript>
 
-{% comment %}
-<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+
+<modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" >
   <span class="product__media-icon motion-reduce quick-add-hidden" aria-hidden="true">
     {%- liquid
       case media.media_type
@@ -98,7 +98,7 @@
     </span>
   </button>
 </modal-opener>
-{% endcomment %}
+
 {%- if media.media_type != 'image' -%}
   {%- if media.media_type == 'model' -%}
     <product-model class="deferred-media media media--transparent gradient global-media-settings no-js-hidden" style="padding-top: 100%" data-media-id="{{ media.id }}">
