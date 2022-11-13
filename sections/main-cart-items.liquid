@@ -60,6 +60,9 @@
 
             <tbody>
               {%- for item in cart.items -%}
+                {% if item.product.id == 8005041488191 %}
+                  <div><h1>Some text here!</h1></div><br> 
+                {% endif %} 
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
