@@ -71,6 +71,7 @@
 
 
 <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" >
+{% comment %}
   <span class="product__media-icon motion-reduce quick-add-hidden" aria-hidden="true">
     {%- liquid
       case media.media_type
@@ -83,7 +84,7 @@
       endcase
     -%}
   </span>
-
+{% endcomment %}
   <div class="product__media media media--transparent gradient global-media-settings" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
     {{ media.preview_image | image_url: width: 1946 | image_tag:
       loading: lazy,
