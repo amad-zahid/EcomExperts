@@ -360,7 +360,7 @@
       {% endcomment %}
     {% endif %}  
     {% else %}
-        {% if i == 1 %}
+        {% if i === 1 %}
           {% assign product = all_products['dark-winter-jacket'] %}
           {% assign variant_id = product.variants.first.id %}
           
@@ -376,9 +376,9 @@
                     } 
                 })
           </script>
-          {% increment i %}
         {% endif %}      
-  {% endif %}  
+  {% endif %}
+  {% increment i %}  
 {% endfor%}
 
 
