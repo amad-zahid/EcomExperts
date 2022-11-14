@@ -364,18 +364,7 @@
           {% assign product = all_products['dark-winter-jacket'] %}
           {% assign variant_id = product.variants.first.id %}
           
-          <script>
-                let variantId =  { {{ variant_id }}: 1 }
-                $.ajax({
-                    type: 'POST',
-                    url: '/cart/update.js',
-                    dataType: 'json',
-                    data: {
-                      'id': parseFloat(variantId),
-                      'quantity': 0
-                    } 
-                })
-          </script>
+          
         {% endif %}      
   {% endif %}
   {% assign firstFound = true %}  
