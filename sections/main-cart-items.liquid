@@ -368,7 +368,7 @@
               let variantId =  { {{ variant_id }}: 1 }
               $.ajax({
                   type: 'POST',
-                  url: '/cart/change.js',
+                  url: '/cart/update.js',
                   dataType: 'json',
                   data: {
                     'id': parseFloat(variantId),
