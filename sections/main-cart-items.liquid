@@ -359,8 +359,10 @@
         //code
       {% endcomment %}
     {% else %}
+
         {% assign product = all_products['dark-winter-jacket'] %}
         {% assign variant_id = product.variants.first.id %}
+        {{ variant_id }}
         <script>
               let variantId =  {{ variant_id }}
               console.log("test pass");
