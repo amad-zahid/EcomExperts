@@ -60,7 +60,6 @@
 
             <tbody>
               {%- for item in cart.items -%}
-                
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
@@ -296,7 +295,7 @@
     <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
   </form>
-</cart-items>  
+</cart-items>
 
 {% schema %}
 {
