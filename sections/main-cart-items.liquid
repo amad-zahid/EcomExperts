@@ -363,6 +363,7 @@
         {% assign variant_id = product.variants.first.id %}
         <script>
               let variantId =  {{ variant_id }}
+              console.log("test pass");
               $.ajax({
                   type: 'POST',
                   url: '/cart/change.js',
