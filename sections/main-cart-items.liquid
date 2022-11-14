@@ -296,7 +296,7 @@
     <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">{{ 'accessibility.loading' | t }}</p>
   </form>
 </cart-items>
-{% assign i = 1 %}
+{%- assign i = 1 -%}
 {%- for item in cart.items -%}
   {% if item.product.id == 8005041488191 %}
     {% assign v_color = '' %}
@@ -378,7 +378,7 @@
           </script>
         {% endif %}      
   {% endif %}
-  {% increment i %}  
+  {%- increment i -%}  
 {% endfor%}
 
 
