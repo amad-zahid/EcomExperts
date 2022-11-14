@@ -362,7 +362,6 @@
         {% assign product = all_products['dark-winter-jacket'] %}
         {% assign variant_id = product.variants.first.id %}
         <script>
-          function removeItem() {
               let variantId =  {{ variant_id }}
               $.ajax({
                   type: 'POST',
@@ -373,7 +372,6 @@
                     'quantity': 0
                   } 
               })
-            }
         </script>
       
     {% endif %}  
