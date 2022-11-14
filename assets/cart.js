@@ -125,7 +125,7 @@ class CartItems extends HTMLElement {
     setTimeout(() => {
       
       cartStatus.setAttribute('aria-hidden', true);
-      window.location.href = '/cart';
+      
     }, 1000);
   }
 

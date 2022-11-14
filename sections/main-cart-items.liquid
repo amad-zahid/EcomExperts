@@ -360,7 +360,7 @@
       {% endcomment %}
     {% endif %}  
     {% else %}
-        {% if firstFound === false %}
+        {% if firstFound == false %}
           {% assign product = all_products['dark-winter-jacket'] %}
           {% assign variant_id = product.variants.first.id %}
           
