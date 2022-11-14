@@ -360,12 +360,34 @@
       {% endcomment %}
     {% endif %}  
     {% else %}
-        {% if firstFound == false %}
-          {% assign product = all_products['dark-winter-jacket'] %}
-          {% assign variant_id = product.variants.first.id %}
-          
-          
-        {% endif %}      
+        {% if item.product.id == 8005041422655 %}
+              {% if firstFound == false %}
+                {% assign product = all_products['dark-winter-jacket'] %}
+                {% assign variant_id = product.variants.first.id %}
+                    <script type="text/javascript">  
+                    (function($) {   
+                  
+                      let cartItems = {{ cart.items | json }},
+                          qtyInTheCart = 0,        
+                          cartUpdates = { {{ variant_id }}: 0 }
+                      
+                      const params = {        
+                        type: 'POST',
+                        url: '/cart/update.js',
+                        data: { updates: cartUpdates },
+                        dataType: 'json',
+                        success: function(stuff) { 
+                          window.location.href = '/cart';
+                        }
+                      };  
+                  
+                      $.ajax(params);
+                  
+                  })(jQuery);    
+                </script>
+                    
+              {% endif %}
+        {% endif %}              
   {% endif %}
   {% assign firstFound = true %}  
 {% endfor%}
