@@ -66,7 +66,7 @@ class CartItems extends HTMLElement {
       sections_url: window.location.pathname
     });
 
-    fetch(window.Shopify.routes.root + 'cart/add.js', { ...fetchConfig(), ...{ body } })
+    fetch(window.Shopify.routes.root, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();
       })
