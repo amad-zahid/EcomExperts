@@ -1,17 +1,30 @@
 class CartRemoveButton extends HTMLElement {
   constructor() {
+    function getParameterByName(name, url) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
     super();
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const p_id = this.getAttribute('data-id');
       const v_id = this.getAttribute('data-var');
-      console.log("Product ID:" + v_id);
-      console.log("Variant ID:" + v_id);
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+
+      
       if (p_id === '8005041488191'){
-        
-        $.post(window.Shopify.routes.root + 'cart/update.js',
-          "updates[8005041422655]=0&updates[8005041422655]=0"
+        const el = document.querySelector("cart-remove-button[data-id='8005041422655'] a").getAttribute('href');
+        const get_url_key = getParameterByName('id', el);
+        const split_url = get_url_key.split(':');
+        const pro_var_id = split_url[0];
+        const pro_key = split_url[1];        
+
+        $.post('/cart/update.js',
+          "updates["+pro_var_id+"]=0"
         );
       }
       cartItems.updateQuantity(this.dataset.index, 0);
