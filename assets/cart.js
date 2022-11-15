@@ -27,7 +27,7 @@ class CartRemoveButton extends HTMLElement {
         $.post('/cart/update.js',
           "updates["+pro_var_id+"]=0"
         );
-        
+        window.location.href = '/cart';
       }else{
         cartItems.updateQuantity(this.dataset.index, 0);
       }
