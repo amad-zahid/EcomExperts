@@ -3,8 +3,19 @@ class CartRemoveButton extends HTMLElement {
     super();
     this.addEventListener('click', (event) => {
       event.preventDefault();
+      const p_id = this.getAttribute('data-id');
+      const v_id = this.getAttribute('data-var');
+      console.log("Product ID:" + v_id);
+      console.log("Variant ID:" + v_id);
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+      if (p_id === '8005041488191'){
+        
+        $.post(window.Shopify.routes.root + 'cart/update.js',
+          "updates[8005041422655]=0&updates[8005041422655]=0"
+        );
+      }
       cartItems.updateQuantity(this.dataset.index, 0);
+      
     });
   }
 }
@@ -66,7 +77,7 @@ class CartItems extends HTMLElement {
       sections: this.getSectionsToRender().map((section) => section.section),
       sections_url: window.location.pathname
     });
-
+    
     fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();
