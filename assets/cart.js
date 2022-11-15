@@ -21,13 +21,17 @@ class CartRemoveButton extends HTMLElement {
         const get_url_key = getParameterByName('id', el);
         const split_url = get_url_key.split(':');
         const pro_var_id = split_url[0];
-        const pro_key = split_url[1];        
+        const pro_key = split_url[1]; 
 
+        cartItems.updateQuantity(this.dataset.index, 0);
         $.post('/cart/update.js',
           "updates["+pro_var_id+"]=0"
         );
+        
+      }else{
+        cartItems.updateQuantity(this.dataset.index, 0);
       }
-      cartItems.updateQuantity(this.dataset.index, 0);
+      
       
     });
   }
