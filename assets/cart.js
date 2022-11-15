@@ -20,6 +20,7 @@ class CartItems extends HTMLElement {
     this.currentItemCount = Array.from(this.querySelectorAll('[name="updates[]"]'))
       .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
 
+    console.log(this.currentItemCount);  
     this.debouncedOnChange = debounce((event) => {
       this.onChange(event);
     }, 300);
